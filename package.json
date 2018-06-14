@@ -1,13 +1,12 @@
 {
-	"name": "terminal-image",
+	"name": "terminal-image-resizeable",
 	"version": "0.1.1",
 	"description": "Display images in the terminal",
 	"license": "MIT",
-	"repository": "sindresorhus/terminal-image",
+	"repository": "nao20010128nao/terminal-image",
 	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"name": "nao20010128nao",
+		"email": "nao20010128@gmail.com"
 	},
 	"engines": {
 		"node": ">=8"
