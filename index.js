@@ -9,10 +9,10 @@ async function render(buffer, width, height) {
 	const columns = width || process.stdout.columns || 80;
 	const rows = height || process.stdout.rows || 24;
 
-	image.resize(columns, rows * 2);
+	image.resize(columns, rows);
 
 	let ret = '';
-	for (let y = 0; y < image.bitmap.height - 1; y += 2) {
+	for (let y = 0; y < image.bitmap.height; y++) {
 		for (let x = 0; x < image.bitmap.width; x++) {
 			const {
 				r,
@@ -20,16 +20,11 @@ async function render(buffer, width, height) {
 				b,
 				a
 			} = Jimp.intToRGBA(image.getPixelColor(x, y));
-			const {
-				r: r2,
-				g: g2,
-				b: b2
-			} = Jimp.intToRGBA(image.getPixelColor(x, y + 1));
 
 			if (a === 0) {
 				ret += chalk.reset(' ');
 			} else {
-				ret += chalk.bgRgb(r, g, b).rgb(r2, g2, b2)(PIXEL);
+				ret += chalk.bgRgb(r, g, b).rgb(r, g, b)(PIXEL);
 			}
 		}
 

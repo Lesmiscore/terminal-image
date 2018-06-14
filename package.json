@@ -1,6 +1,6 @@
 {
 	"name": "terminal-image-resizeable",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Display images in the terminal",
 	"license": "MIT",
 	"repository": "nao20010128nao/terminal-image",
