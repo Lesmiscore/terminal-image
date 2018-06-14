@@ -9,9 +9,7 @@ async function render(buffer, width, height) {
 	const columns = width || process.stdout.columns || 80;
 	const rows = height || process.stdout.rows || 24;
 
-	if (image.bitmap.width > columns || (image.bitmap.height / 2) > rows) {
-		image.scaleToFit(columns, rows * 2);
-	}
+	image.resize(columns, rows * 2);
 
 	let ret = '';
 	for (let y = 0; y < image.bitmap.height - 1; y += 2) {
